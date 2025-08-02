@@ -1,0 +1,341 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Curso_DP300_Bauer">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="(local):Bauer">
+          <Created>2025-06-11T21:39:49.159437-03:00</Created>
+          <Type>SQL</Type>
+          <Server>(local)</Server>
+          <UserName>Bauer</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>False</TrustServerCertificate>
+          <HostNameInServerCertificate />
+          <EncryptionOption>False</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="(local):BAUER-ASUSVIVO\mfwba">
+          <Created>2021-02-15T17:40:49.7027912-03:00</Created>
+          <Type>SQL</Type>
+          <Server>(local)</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>False</TrustServerCertificate>
+          <EncryptionOption>True</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="(local):Caixa">
+          <Created>2021-03-18T19:00:26.8659806-03:00</Created>
+          <Type>SQL</Type>
+          <Server>(local)</Server>
+          <UserName>Caixa</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>False</TrustServerCertificate>
+          <EncryptionOption>True</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="(local):caixa">
+          <Created>2021-05-20T20:29:05.7622137-03:00</Created>
+          <Type>SQL</Type>
+          <Server>(local)</Server>
+          <UserName>caixa</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>False</TrustServerCertificate>
+          <EncryptionOption>True</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="bauergreensqlnovo.database.windows.net:psUser">
+          <Created>2021-02-15T17:37:29.5355945-03:00</Created>
+          <Type>SQL</Type>
+          <Server>bauergreensqlnovo.database.windows.net</Server>
+          <UserName>psUser</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>False</TrustServerCertificate>
+          <EncryptionOption>True</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="bauerkasolutionsqlnew.database.windows.net:bauer">
+          <Created>2021-03-17T20:31:48.1316431-03:00</Created>
+          <Type>SQL</Type>
+          <Server>bauerkasolutionsqlnew.database.windows.net</Server>
+          <UserName>bauer</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB>TestPSDB</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>False</TrustServerCertificate>
+          <EncryptionOption>True</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="dp300-lab-mfwb.database.windows.net:dp300admin">
+          <Created>2021-03-17T21:56:50.940878-03:00</Created>
+          <Type>SQL</Type>
+          <Server>dp300-lab-mfwb.database.windows.net</Server>
+          <UserName>dp300admin</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>False</TrustServerCertificate>
+          <EncryptionOption>True</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="Modulo01.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Modulo01.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Modulo02.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Modulo02.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Modulo03.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Modulo03.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Modulo04.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Modulo04.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Modulo05.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Modulo05.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Modulo06.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Modulo06.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Modulo07.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Modulo07.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Additional-References.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_Additional-References.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Always_Encrypted.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_Always_Encrypted.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Application_Roles.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):False:caixa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName>caixa</AssociatedConnUserName>
+          <FullPath>X-EXTRA_Application_Roles.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_ColumnStore.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_ColumnStore.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_CrossApply.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_CrossApply.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Data_Tier_Applications.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_Data_Tier_Applications.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Database_Snapshot.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_Database_Snapshot.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_DBCC_CHECKDB.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_DBCC_CHECKDB.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Dynamic_Data_Masking.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_Dynamic_Data_Masking.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Extended_Events.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_Extended_Events.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_General_TIPs.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_General_TIPs.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_InMemory_Table_OLTP.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_InMemory_Table_OLTP.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_InstantFileInitialization.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_InstantFileInitialization.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Isolation-Levels.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_Isolation-Levels.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_LinkedServer.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_LinkedServer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_LiveQuery_Statistics.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_LiveQuery_Statistics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Objetos_Temporarios.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_Objetos_Temporarios.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Partition_Function.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_Partition_Function.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Perfomance_Dashboard.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_Perfomance_Dashboard.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Performance.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_Performance.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Powershell.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_Powershell.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Query_Store.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_Query_Store.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_ReadCommSnap_Snapshot.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_ReadCommSnap_Snapshot.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Resource_Governor.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_Resource_Governor.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_SargAbility.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_SargAbility.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_SeekPredicate_versus_Predicate.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_SeekPredicate_versus_Predicate.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_TempDB.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_TempDB.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_Temporal_Tables.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):False:Bauer</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName>Bauer</AssociatedConnUserName>
+          <FullPath>X-EXTRA_Temporal_Tables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_TFS.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_TFS.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA-Distributed_Queries.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA-Distributed_Queries.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+  <SccProjectName />
+  <SccAuxPath />
+  <SccLocalPath />
+  <SccProvider />
+</SqlWorkbenchSqlProject>

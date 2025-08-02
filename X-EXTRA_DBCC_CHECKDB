@@ -1,0 +1,165 @@
+-------------------- Curso 20-764 - Modulo 14 --------------------
+
+
+----- Demo 1: Troubleshooting Service-Related Issues -----
+
+--1. In the D:\Demofiles\Mod14 folder, run Setup.cmd as Administrator.
+
+--2. In the User Account Control dialog box, click Yes.
+
+--3. Click the Start button, then type Configuration Manager, click SQL Server 2016 Configuration
+--Manager.
+
+--4. In the User Account Control dialog box, click Yes.
+
+--5. In Sql Server Configuration Manager, in the left pane, click SQL Server Services.
+
+--6. In right pane, note that the SQL Server (SQL2) service is not running.
+
+--7. Right-click SQL Server (SQL2) and click Start. Note that the service does not start successfully, and
+--an error message is returned.
+
+--8. In the SQL Server Configuration Manager dialog, click OK.
+
+--9. To check the Windows system log, click Start, type Event Viewer, and press Enter.
+
+--10. In Event Viewer, in the left pane, expand Windows Logs, and then click System.
+
+--11. Click on the most recent message with a Level of Error and a Source of Service Control Manager.
+
+--12. On the Details tab, note that the error message states that there is a service specific error, and
+--provides only the following details:
+
+SQL Server (SQL2)
+%%17113
+
+--13. Close the Event Viewer window.
+
+--14. To check the SQL Server error log, start File Explorer, and navigate to C:\Program Files\Microsoft
+--SQL Server\MSSQL13.SQL2\MSSQL\Log.
+
+--15. If a Log dialog box appears, click Continue.
+
+--16. Right-click ERRORLOG, click Open with, and then click Notepad. Notice the last three lines of the
+--file include the error number displayed in the Windows system log (17113), and a detailed description
+--of the problem (scroll to the right to read the full error message). The message indicates that the data
+--file for the master database cannot be found.
+
+--17. In File Explorer, navigate to the folder location mentioned in the error message (C:\Program
+--Files\Microsoft SQL Server\MSSQL13.SQL2\MSSQL\DATA).
+
+--18. If a DATA dialog box appears, click Continue. Notice that the folder contains the file
+--master.AV0001. The demonstration simulates the situation where the master.mdf file has been
+--quarantined by an antivirus application, which has renamed it master.AV0001.
+--(In a real-world scenario, you would need to recover the file from the quarantine system, and prevent
+--the antivirus application from scanning this folder, before attempting to restart the service.)
+
+--19. For the purposes of this demonstration, rename the file master.AV0001 to master.mdf; right-click
+--master.AV0001 then click Rename.
+
+--20. Replace the AV0001 file extension with mdf, then press Enter.
+
+--21. In the Rename dialog box, click Yes.
+
+--22. Close File Explorer.
+
+--23. In SQL Server Configuration Manager, in the right pane, right-click SQL Server (SQL2), and then click
+--Start. Note that the service starts successfully.
+
+--24. Close SQL Server Configuration Manager and Notepad.
+
+
+
+----- Demo 2: DBCC CHECKDB
+
+-- Run DBCC CHECKDB with default options
+DBCC CHECKDB('AdventureWorks') WITH ESTIMATEONLY
+GO
+
+DBCC CHECKDB('AdventureWorks');
+GO
+
+-- Run DBCC CHECKDB without informational messages
+DBCC CHECKDB('AdventureWorks') WITH NO_INFOMSGS;
+GO
+
+-- Run DBCC CHECKDB against CorruptDB	
+DBCC CHECKDB('CorruptDB') WITH NO_INFOMSGS;
+GO
+
+-- Try to access the Orders table
+SELECT * FROM CorruptDB.dbo.Orders;
+GO
+
+SELECT COUNT(*) FROM CorruptDB.dbo.Orders;
+GO
+
+-- Access a specific order
+SELECT * FROM CorruptDB.dbo.Orders WHERE OrderID = 10400;
+GO
+
+-- ULTIMA OPCAO - TENTAR RESTAURAR BACKUPS ANTES DISSO !!!!!
+-- LEIA O WARNING ABAIXO DA LINHA 104 A LINHA 132.
+
+--!!! Warning !!!
+
+--The REPAIR_ALLOW_DATA_LOSS option is a supported feature but it may not always be the best 
+--option for bringing a database to a physically consistent state. If successful, 
+--the REPAIR_ALLOW_DATA_LOSS option may result in some data loss. 
+--In fact, it may result in more data lost than if a user were to restore the database from 
+--the last known good backup. 
+
+--Microsoft always recommends a user restore from the last known good backup as the primary method 
+--to recover from errors reported by DBCC CHECKDB. The REPAIR_ALLOW_DATA_LOSS option is not an 
+--alternative for restoring from a known good backup. It is an emergency “last resort” option 
+--recommended for use only if restoring from a backup is not possible. 
+
+--Certain errors, that can only be repaired using the REPAIR_ALLOW_DATA_LOSS option, 
+--may involve deallocating a row, page, or series of pages to clear the errors. 
+--Any deallocated data is no longer accessible or recoverable for the user, 
+--and the exact contents of the deallocated data cannot be determined. 
+--Therefore, referential integrity may not be accurate after any rows or pages 
+--are deallocated because foreign key constraints are not checked or maintained as part 
+--of this repair operation. The user must inspect the referential integrity of their database
+-- (using DBCC CHECKCONSTRAINTS) after using the REPAIR_ALLOW_DATA_LOSS option. 
+
+--Before performing the repair, create physical copies of the files that belong to this database. 
+--This includes the primary data file (.mdf), any secondary data files (.ndf), all transaction log files 
+--(.ldf), and other containers that form the database including full text catalogs, file stream folders,
+-- memory optimized data, etc. 
+
+--Before performing the repair, consider changing the state of the database to EMERGENCY mode 
+--and trying to extract as much information possible from the critical tables and save that data. 
+
+-- LEIA O WARNING ACIMA DA LINHA 104 A LINHA 132.
+-- ULTIMA OPCAO - TENTAR RESTAURAR BACKUPS ANTES DISSO !!!!!
+
+-- Repair the database Forcibly
+ALTER DATABASE CorruptDB SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+GO
+DBCC CHECKDB('CorruptDB', REPAIR_ALLOW_DATA_LOSS);
+GO
+ALTER DATABASE CorruptDB SET MULTI_USER WITH ROLLBACK IMMEDIATE;
+GO
+
+-- Access the Orders table
+SELECT * FROM CorruptDB.dbo.Orders;
+GO
+
+SELECT COUNT(*) FROM CorruptDB.dbo.Orders;
+GO
+
+
+-- Check the internal database structure
+DBCC CHECKDB('CorruptDB') WITH NO_INFOMSGS;
+GO
+
+-- Check data loss
+DBCC CHECKCONSTRAINTS
+
+SELECT DISTINCT OrderID 
+FROM CorruptDB.dbo.[order details] AS od
+WHERE NOT EXISTS (SELECT 1 
+                  FROM CorruptDB.dbo.Orders AS o
+                  WHERE o.orderid = od.orderid);
+GO
