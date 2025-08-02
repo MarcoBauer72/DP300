@@ -1,5 +1,5 @@
 ------------------------ DP300 - MODULO 01 -------------------------
-legalzao
+
 /* ----------------------------------------------------------- */
 /* Lab.0 - Azure Storage Account (Blob, File, Table and Queue) */
 /* ----------------------------------------------------------- */
@@ -128,7 +128,7 @@ https://microsoftlearning.github.io/dp-300-database-administrator/Instructions/L
 -- Labs of the course DP300
 https://aka.ms/dp300-labs
 
--- Public preview – Visible either in the portal, or at 
+-- Public preview â€“ Visible either in the portal, or at 
 https://azure.microsoft.com/en-us/updates/
 
 -- Frequently asked questions for SQL Server running on Windows virtual machines in Azure:
@@ -138,4 +138,5 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sql/virtual-mach
 https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance
 
 -- What is the Azure SQL Database service?
+
 https://docs.microsoft.com/en-us/azure/sql-database/sql-database-technical-overview
