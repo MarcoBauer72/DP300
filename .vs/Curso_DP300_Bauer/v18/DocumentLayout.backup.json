@@ -1,35 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\GitHub\\DP300\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{EA9F0812-AEA8-9226-A8F6-B23F6F94E594}|Curso_DP300_Bauer.ssmssqlproj|D:\\GitHub\\DP300\\X-EXTRA_DataTypes.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
-      "RelativeMoniker": "D:0:0:{EA9F0812-AEA8-9226-A8F6-B23F6F94E594}|Curso_DP300_Bauer.ssmssqlproj|solutionrelative:X-EXTRA_DataTypes.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "X-EXTRA_DataTypes.sql - (local).master (bauer (56))",
-              "DocumentMoniker": "D:\\GitHub\\DP300\\X-EXTRA_DataTypes.sql",
-              "RelativeDocumentMoniker": "X-EXTRA_DataTypes.sql",
-              "ToolTip": "X-EXTRA_DataTypes.sql - (local).master (bauer (56))",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-07-31T21:28:10.702Z",
-              "EditorCaption": " - (local).master (bauer (56))"
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

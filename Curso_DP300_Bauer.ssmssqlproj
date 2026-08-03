@@ -57,16 +57,10 @@
           <AssociatedConnUserName>bauer</AssociatedConnUserName>
           <FullPath>Modulo06.sql</FullPath>
         </FileNode>
-        <FileNode Name="Modulo07.sql">
+        <FileNode Name="X-EXTRA_Additional-References.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):False:bauer</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
           <AssociatedConnUserName>bauer</AssociatedConnUserName>
-          <FullPath>Modulo07.sql</FullPath>
-        </FileNode>
-        <FileNode Name="X-EXTRA_Additional-References.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
           <FullPath>X-EXTRA_Additional-References.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_Always_Encrypted.sql">
@@ -82,9 +76,9 @@
           <FullPath>X-EXTRA_Application_Roles.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_ColumnStore.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):False:bauer</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName>bauer</AssociatedConnUserName>
           <FullPath>X-EXTRA_ColumnStore.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_CrossApply.sql">
@@ -232,9 +226,9 @@
           <FullPath>X-EXTRA_TempDB.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_Temporal_Tables.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):False:bauer</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName>bauer</AssociatedConnUserName>
           <FullPath>X-EXTRA_Temporal_Tables.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_TFS.sql">

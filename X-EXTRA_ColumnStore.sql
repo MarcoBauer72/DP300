@@ -106,7 +106,7 @@ https://www.youtube.com/watch?v=5FY240SUz18
 --	NOTA: Necessario baixar e restaurar o banco de dados Adventureworks2016CTP3:
 	https://www.microsoft.com/en-us/download/details.aspx?id=49502
 
-USE AdventureworksDW2016
+USE AdventureworksDW2016CCI
 GO
 
 /*************************************************************************************
@@ -143,11 +143,11 @@ Step 2 -- Overview
 -- Enable actual Query Plan in order to see Plan differences when Executing
 *************************************************************************************/
 
-USE AdventureworksDW2016
+USE AdventureworksDW2016CCI
 GO
 
 -- Ensure Database is in 130 compatibility mode
-ALTER DATABASE AdventureworksDW2016 SET compatibility_level = 130
+ALTER DATABASE AdventureworksDW2016CCI SET compatibility_level = 130
 GO
 DBCC DROPCLEANBUFFERS
 GO
