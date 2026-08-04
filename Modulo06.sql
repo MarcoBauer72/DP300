@@ -17,7 +17,7 @@ https://microsoftlearning.github.io/dp-300-database-administrator/Instructions/L
 
 ----- Exercise 2: Configure Performance Metrics Based Alerts -----
 https://microsoftlearning.github.io/dp-300-database-administrator/Instructions/Labs/12-create-cpu-status-alert.html
-
+ 
 
 ----- Exercise 3: Deploy an Automation Runbook -----
 https://microsoftlearning.github.io/dp-300-database-administrator/Instructions/Labs/13-deploy-automation-runbook-rebuild-indexes.html

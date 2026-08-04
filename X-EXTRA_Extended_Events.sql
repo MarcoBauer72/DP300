@@ -244,7 +244,7 @@ DROP EVENT SESSION SqlStatementCompleted ON SERVER
 --13. In SSMS, in the Demo 2 - track waits by session.sql pane, select the code under the comment that
 --begins Step 14, click Execute, and then review the results.
 
-SELECT * FROM sys.fn_xe_file_target_read_file('D:\DP300\trace\advstmtcompletedtrace*.xel', NULL, NULL, NULL)
+SELECT * FROM sys.fn_xe_file_target_read_file('D:\DP300\XE\capturaporxe*.xel', NULL, NULL, NULL)
 
 
 
@@ -253,7 +253,7 @@ WITH xeCTE
 AS
 (
 	SELECT CAST(event_data AS xml) AS xe_xml
-	FROM sys.fn_xe_file_target_read_file('D:\DP300\trace\advstmtcompletedtrace*.xel', NULL, NULL, NULL)
+	FROM sys.fn_xe_file_target_read_file('D:\DP300\XE\capturaporxe*.xel', NULL, NULL, NULL)
 )
 ,valueCTE
 AS

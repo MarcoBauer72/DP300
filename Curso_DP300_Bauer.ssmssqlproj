@@ -3,6 +3,20 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
+        <ConnectionNode Name="(local):ALIENBAUERI9\mfwba">
+          <Created>2026-08-03T20:36:13.0923069-03:00</Created>
+          <Type>SQL</Type>
+          <Server>(local)</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>False</TrustServerCertificate>
+          <EncryptionOption>False</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
         <ConnectionNode Name="(local):bauer">
           <Created>2026-07-31T18:26:44.2763879-03:00</Created>
           <Type>SQL</Type>
@@ -118,8 +132,8 @@
           <FullPath>X-EXTRA_Dynamic_Data_Masking.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_Extended_Events.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>X-EXTRA_Extended_Events.sql</FullPath>
         </FileNode>
@@ -154,8 +168,8 @@
           <FullPath>X-EXTRA_LinkedServer.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_LiveQuery_Statistics.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>X-EXTRA_LiveQuery_Statistics.sql</FullPath>
         </FileNode>
