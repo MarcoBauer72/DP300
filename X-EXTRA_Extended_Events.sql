@@ -101,10 +101,10 @@ SELECT * FROM fn_trace_gettable('D:\DP300\trace\ssdtrace.trc', default);
 
 -- Step 1 - Define an Extended Events session to capture the text of completed SQL statements
 -- when executed by the ADVENTUREWORKS\Student login
-CREATE EVENT SESSION SqlStatementCompleted ON SERVER
+CREATE EVENT SESSION xe_stmtcompleted_adventureworks ON SERVER
 ADD EVENT sqlserver.sql_statement_completed (
 	ACTION (sqlserver.sql_text,sqlserver.session_id)
-	WHERE server_principal_name = 'ADVENTUREWORKS\Student'
+
 )
 ADD TARGET package0.ring_buffer
 WITH (MAX_MEMORY=4096 KB,
@@ -113,8 +113,65 @@ WITH (MAX_MEMORY=4096 KB,
 	MAX_EVENT_SIZE=0 KB,
 	MEMORY_PARTITION_MODE=NONE,
 	TRACK_CAUSALITY=OFF,
-	STARTUP_STATE=OFF);
+	STARTUP_STATE=ON);
 GO
+
+-- Idem ao acima porem TARGET FILE
+CREATE EVENT SESSION xe_stmtcompleted_file ON SERVER
+ADD EVENT sqlserver.sql_statement_completed (
+	ACTION (sqlserver.sql_text,sqlserver.session_id)
+
+)
+ADD TARGET package0.event_file(SET filename=N'D:\DP300\XE\xe_stmtcompleted.xel')
+WITH (MAX_MEMORY=4096 KB,
+	EVENT_RETENTION_MODE=ALLOW_SINGLE_EVENT_LOSS,
+	MAX_DISPATCH_LATENCY=30 SECONDS,
+	MAX_EVENT_SIZE=0 KB,
+	MEMORY_PARTITION_MODE=NONE,
+	TRACK_CAUSALITY=OFF,
+	STARTUP_STATE=ON);
+GO
+
+
+--- Referencia gravando no Ring Buffer sem filtrar o banco de dados
+CREATE EVENT SESSION [xeringbuffer] ON SERVER 
+ADD EVENT sqlserver.sp_statement_completed(
+    ACTION(sqlos.cpu_id,SQLSatellite.AppName,sqlserver.client_hostname,sqlserver.database_name,sqlserver.sql_text,sqlserver.username,XtpCompile.AppName)
+    ),
+ADD EVENT sqlserver.sql_statement_completed(
+    ACTION(sqlos.cpu_id,SQLSatellite.AppName,sqlserver.client_hostname,sqlserver.database_name,sqlserver.sql_text,sqlserver.username,XtpCompile.AppName)
+   )
+ADD TARGET package0.ring_buffer
+WITH (STARTUP_STATE=ON)
+GO
+
+
+
+--- Referencia gravando no Ring Buffer e filtrando banco "AdventureWorks"
+CREATE EVENT SESSION [xeringbuffer] ON SERVER 
+ADD EVENT sqlserver.sp_statement_completed(
+    ACTION(sqlos.cpu_id,SQLSatellite.AppName,sqlserver.client_hostname,sqlserver.database_name,sqlserver.sql_text,sqlserver.username,XtpCompile.AppName)
+    WHERE ([sqlserver].[database_name]=N'AdventureWorks')),
+ADD EVENT sqlserver.sql_statement_completed(
+    ACTION(sqlos.cpu_id,SQLSatellite.AppName,sqlserver.client_hostname,sqlserver.database_name,sqlserver.sql_text,sqlserver.username,XtpCompile.AppName)
+    WHERE ([sqlserver].[database_name]=N'AdventureWorks'))
+ADD TARGET package0.ring_buffer
+WITH (STARTUP_STATE=ON)
+GO
+
+
+--- Referencia gravando em arquivos XEL e filtrando banco "AdventureWorks"
+CREATE EVENT SESSION [minhacapturaxe] ON SERVER 
+ADD EVENT sqlserver.sp_statement_completed(
+    ACTION(sqlos.cpu_id,SQLSatellite.AppName,sqlserver.client_app_name,sqlserver.context_info,sqlserver.database_name,sqlserver.sql_text,sqlserver.username,XtpCompile.AppName)
+    WHERE ([sqlserver].[database_name]=N'AdventureWorks')),
+ADD EVENT sqlserver.sql_statement_completed(
+    ACTION(sqlos.cpu_id,SQLSatellite.AppName,sqlserver.client_app_name,sqlserver.context_info,sqlserver.database_name,sqlserver.sql_text,sqlserver.username,XtpCompile.AppName)
+    WHERE ([sqlserver].[database_name]=N'AdventureWorks'))
+ADD TARGET package0.event_file(SET filename=N'D:\DP300\XE\minhacapturaxe.xel')
+WITH (STARTUP_STATE=ON)
+GO
+
 
 -- Step 2 - the session has been created, so it exists in sys.server_event_sessions
 -- but is not visible in sys.dm_xe_sessions
@@ -139,7 +196,7 @@ SELECT CAST(target_data AS XML) AS xe_data
 FROM sys.dm_xe_session_targets AS st
 JOIN sys.dm_xe_sessions AS  s 
 ON st.event_session_address = s.address
-WHERE s.name = 'xe_stmtcompleted_adventureworks';
+WHERE s.name = 'xe_stmtcompleted_file';
 
 -- Step 5 - query the captured data (ii) - to make the data more usable, shred the XML
 -- run the SQL statement below, then click on the XML data in the first row of the xe_event column
@@ -152,7 +209,7 @@ FROM	(	SELECT CAST(target_data AS XML) AS xe_data
 			FROM sys.dm_xe_session_targets AS st
 			JOIN sys.dm_xe_sessions AS  s 
 			ON st.event_session_address = s.address
-			WHERE s.name = 'xe_stmtcompleted_adventureworks'
+			WHERE s.name = 'xe_stmtcompleted_file'
 		) AS xe
 CROSS APPLY xe_data.nodes('//event') xa (xe_xml);
 
@@ -173,9 +230,9 @@ CROSS APPLY xe_data.nodes('//event') xa (xe_xml);
 -- Execute the statements below, then return to the live query results window and wait for the
 -- events to appear.
 
-	SELECT 'sample extended events 3' AS v1;
+	SELECT 'sample extended events 111' AS v1;
 	GO
-	SELECT 'sample extended events 161616' AS v2;
+	SELECT 'sample extended events 222' AS v2;
 	GO
 
 -- Demonstrate that events are captured, then return to this window
@@ -244,7 +301,8 @@ DROP EVENT SESSION SqlStatementCompleted ON SERVER
 --13. In SSMS, in the Demo 2 - track waits by session.sql pane, select the code under the comment that
 --begins Step 14, click Execute, and then review the results.
 
-SELECT * FROM sys.fn_xe_file_target_read_file('D:\DP300\XE\capturaporxe*.xel', NULL, NULL, NULL)
+SELECT * FROM sys.fn_xe_file_target_read_file('D:\DP300\XE\xe_stmtcompleted*.xel', NULL, NULL, NULL)
+
 
 
 
@@ -253,27 +311,29 @@ WITH xeCTE
 AS
 (
 	SELECT CAST(event_data AS xml) AS xe_xml
-	FROM sys.fn_xe_file_target_read_file('D:\DP300\XE\capturaporxe*.xel', NULL, NULL, NULL)
+	FROM sys.fn_xe_file_target_read_file('D:\DP300\XE\xe_stmtcompleted*.xel', NULL, NULL, NULL)
 )
 ,valueCTE
 AS
 (
 	SELECT xe_xml.value('(event/action[@name="session_id"]/value)[1]','int') AS sessionID,
+	xe_xml.value('(event/action[@name="sql_text"]/value)[1]','nvarchar(max)') AS sql_text,
 	xe_xml.value('(event/data[@name="cpu_time"]/value)[1]','int') AS cpu_time,
 	xe_xml.value('(event/data[@name="duration"]/value)[1]','int') AS wait_duration,
 	xe_xml.value('(event/data[@name="signal_duration"]/value)[1]','int') AS wait_signal_duration
 	FROM xeCTE
 )
 SELECT
-*
---sessionID, wait_type, 
---SUM(wait_duration) AS total_wait_duration, 
---SUM(wait_signal_duration) AS signal_wait_duration, 
---SUM(wait_duration - wait_signal_duration) AS resource_wait_duration
+sessionID, 
+sql_text,
+SUM(wait_duration) AS total_wait_duration, 
+SUM(wait_signal_duration) AS signal_wait_duration, 
+SUM(wait_duration - wait_signal_duration) AS resource_wait_duration
 FROM valueCTE
---WHERE wait_duration > 0
---GROUP BY sessionID, wait_type
---ORDER BY sessionID, wait_type;
+WHERE wait_duration > 0
+GROUP BY sessionID, sql_text
+ORDER BY sessionID, total_wait_duration DESC;
+
 
 --14. Select the code under the comment that begins Step 15, and then click Execute to stop and drop the
 --session, and to stop the workload.
