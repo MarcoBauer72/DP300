@@ -20,21 +20,21 @@
 
 -	Possível forçar um plano de execução específico para determinada consulta para
 	"evitar" grande variação de desempenho.
-DROP DATABASE [qstore]
+DROP DATABASE [qstr]
 
-CREATE DATABASE [qstore]
+CREATE DATABASE qstr
+GO 
+ 
+USE qstr
 GO
 
-USE qstore
+ALTER DATABASE [qstr] SET AUTO_UPDATE_STATISTICS OFF 
 GO
-
-ALTER DATABASE [qstore] SET AUTO_UPDATE_STATISTICS OFF 
+ALTER DATABASE [qstr] SET AUTO_CREATE_STATISTICS OFF 
 GO
-ALTER DATABASE [qstore] SET AUTO_CREATE_STATISTICS OFF 
+ALTER DATABASE [qstr] SET RECOVERY SIMPLE 
 GO
-ALTER DATABASE [qstore] SET RECOVERY SIMPLE 
-GO
-ALTER DATABASE [qstore] SET QUERY_STORE = OFF
+ALTER DATABASE [qstr] SET QUERY_STORE = OFF
 GO
 
 
@@ -70,7 +70,7 @@ go 15000
 SELECT COUNT(1) FROM [dbo].db_store
 
 -- Enabling Query Store on the database
-ALTER DATABASE [qstore] SET QUERY_STORE = ON
+ALTER DATABASE [qstr] SET QUERY_STORE = ON
 GO
 
 ----------------------------------------------------------------
@@ -87,7 +87,7 @@ USE master;
 GO
 
 ALTER DATABASE 
-[qstore] 
+[qstr] 
 SET QUERY_STORE = ON
 (	
 	CLEANUP_POLICY = (STALE_QUERY_THRESHOLD_DAYS = 31), 
@@ -155,7 +155,7 @@ GO 20
  ----------------------------------------------------------------
 -- PART 2: Analyze Query Store data
 -----------------------------------------------------------------
-USE qstore;
+USE qstr;
 GO
 
 /*Find last 10 queries executed in the database*/
@@ -336,7 +336,7 @@ WHERE is_forced_plan = 1;
 USE master;
 GO
 
-ALTER DATABASE qstore SET QUERY_STORE CLEAR;
+ALTER DATABASE qstr SET QUERY_STORE CLEAR;
 
 
 Referencias:

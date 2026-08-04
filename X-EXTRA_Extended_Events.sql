@@ -304,7 +304,7 @@ DROP EVENT SESSION SqlStatementCompleted ON SERVER
 SELECT * FROM sys.fn_xe_file_target_read_file('D:\DP300\XE\xe_stmtcompleted*.xel', NULL, NULL, NULL)
 
 
-
+SELECT '20260804' as data
 
 -- Step 14 - query to aggregate waits by session id
 WITH xeCTE

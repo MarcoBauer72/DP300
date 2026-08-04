@@ -125,6 +125,18 @@
           <AssociatedConnUserName />
           <FullPath>X-EXTRA_DBCC_CHECKDB.sql</FullPath>
         </FileNode>
+        <FileNode Name="X-EXTRA_DeadLock_Window1.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_DeadLock_Window1.sql</FullPath>
+        </FileNode>
+        <FileNode Name="X-EXTRA_DeadLock_Window2.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>X-EXTRA_DeadLock_Window2.sql</FullPath>
+        </FileNode>
         <FileNode Name="X-EXTRA_Dynamic_Data_Masking.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
@@ -204,8 +216,8 @@
           <FullPath>X-EXTRA_Powershell.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_Query_Store.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>X-EXTRA_Query_Store.sql</FullPath>
         </FileNode>
