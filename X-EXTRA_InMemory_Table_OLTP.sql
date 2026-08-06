@@ -109,14 +109,14 @@ DECLARE @I INT = 1 --(>SQL2005)
 
 WHILE @I <= 200000
 BEGIN
-INSERT INTO [dbo].[ProspectiveBuyer]  -- 39''  38''
+INSERT INTO [dbo].[ProspectiveBuyer]   
            ([ProspectAlternateKey]
            ,[FirstName]
            ,[MiddleName]
 		   )
      VALUES (@I,'NADA','NOMEMEIO')
 		   
-SET @I = @I + 1  -- @I +=1
+SET @I +=1
 END
 GO
 
@@ -130,8 +130,10 @@ DELETE [dbo].[ProspectiveBuyer]
 
 DECLARE @I INT = 1
 
-WHILE @I <= 200000
+WHILE @I <= 2000000
 BEGIN
+[ProspectiveBuyer] --  X'Y''
+[ProspectiveBuyer_old] -- Z'W''
 
 INSERT INTO [dbo].[ProspectiveBuyer]
            ([ProspectAlternateKey]

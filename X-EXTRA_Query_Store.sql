@@ -196,7 +196,7 @@ GO
 --the plan as well. Confirm that you want to force this plan for the query:
 
 -- Another way to force the plan is by using  sp_query_store_force_plan stored procedure:
-EXEC sp_query_store_force_plan @query_id = 50, @plan_id = 62;
+EXEC sp_query_store_force_plan @query_id = 68, @plan_id = 5;
 
 --CREATE PROC dbo.proc_1 @par1 SMALLINT
 --AS 
@@ -215,11 +215,11 @@ EXEC dbo.proc_1 0
 GO 20
 
 --Now we will un-force plan #13 and run the stored procedure again
-EXEC sp_query_store_unforce_plan @query_id = 2, @plan_id = 16
+EXEC sp_query_store_unforce_plan @query_id = 68, @plan_id = 5
 GO
 
 EXEC dbo.proc_1 0
-GO
+GO 20
 
 
 /*Get queries with more than one execution plan (plan forcing candidates)*/

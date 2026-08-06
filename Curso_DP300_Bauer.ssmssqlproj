@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<SqlWorkbenchSqlProject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Curso_DP300_Bauer">
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Curso_DP300_Bauer">
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
@@ -102,9 +102,9 @@
           <FullPath>X-EXTRA_CrossApply.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_Data_Tier_Applications.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):False:bauer</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName>bauer</AssociatedConnUserName>
           <FullPath>X-EXTRA_Data_Tier_Applications.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_Database_Snapshot.sql">
@@ -126,15 +126,15 @@
           <FullPath>X-EXTRA_DBCC_CHECKDB.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_DeadLock_Window1.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):False:bauer</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName>bauer</AssociatedConnUserName>
           <FullPath>X-EXTRA_DeadLock_Window1.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_DeadLock_Window2.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):False:bauer</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName>bauer</AssociatedConnUserName>
           <FullPath>X-EXTRA_DeadLock_Window2.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_Dynamic_Data_Masking.sql">
@@ -156,9 +156,9 @@
           <FullPath>X-EXTRA_General_TIPs.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_InMemory_Table_OLTP.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):False:bauer</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName>bauer</AssociatedConnUserName>
           <FullPath>X-EXTRA_InMemory_Table_OLTP.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_InstantFileInitialization.sql">
@@ -258,9 +258,9 @@
           <FullPath>X-EXTRA_Temporal_Tables.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA_TFS.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):False:bauer</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName>bauer</AssociatedConnUserName>
           <FullPath>X-EXTRA_TFS.sql</FullPath>
         </FileNode>
         <FileNode Name="X-EXTRA-Distributed_Queries.sql">
